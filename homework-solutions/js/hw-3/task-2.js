@@ -4,3 +4,7 @@
 n + nn + nnn, где n не перемножаются, а конкатенируются
 
 */
+
+let item = 3
+console.log(item + +(item + String(item)) + +(item + String(item) + String(item)));
+
