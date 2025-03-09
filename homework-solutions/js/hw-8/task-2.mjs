@@ -1,9 +1,9 @@
 /*
-  sortedByVowels
-  Напишите функцию, которая принимает на вход массив слов и
-  возвращает отсортированный массив по следующему критерию: количество гласных букв.
-  Массив должен быть отсортирован по возрастанию количества гласных букв в слове.
- */
+    sortedByVowels
+    Напишите функцию, которая принимает на вход массив слов и
+    возвращает отсортированный массив по следующему критерию: количество гласных букв.
+    Массив должен быть отсортирован по возрастанию количества гласных букв в слове.
+  */
 
 const words = [
   'umbrella',
@@ -18,8 +18,22 @@ const words = [
   'queue',
 ];
 
-function sortedByVowels(wordsArr) {
-  // Ваш код
-}
+function sortedByVowels(words) {
+  function countVowels(word) {
+    const vowels = 'aeiouAEIOU';
+    let count = 0;
+
+    for (let char of word) {
+      if (vowels.includes(char)) {
+        count++;
+      };
+    };
+    return count;
+  };
+
+  return words.sort((a, b) => countVowels(a) - countVowels(b));
+};
+
+console.log(sortedByVowels(words));
 
 export { sortedByVowels };
