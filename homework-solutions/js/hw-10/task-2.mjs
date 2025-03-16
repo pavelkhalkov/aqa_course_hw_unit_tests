@@ -7,8 +7,18 @@
   Ожидается: { 1: 1, 2: 2, 3: 1, 4: 3, 5: 1 }
 */
 
+const numbers = [1, 2, 2, 3, 4, 4, 4, 5];
+
 function countOccurrences(arr) {
-  // ваш код
+  const count = {};
+
+  for (let num of arr) {
+    count[num] = (count[num] || 0) + 1 
+  }
+return count 
 }
+
+console.log(countOccurrences(numbers))
+
 
 export { countOccurrences };
