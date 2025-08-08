@@ -7,6 +7,7 @@
 
   Значение добавьте в массив 'forOf' 
 */
+
 const forOf = [];
 
 const array = [1,2,3,4,5,6,7,8,9,10]
@@ -18,8 +19,6 @@ for(const element of array) {
      forOf.push (element ** 3)
    }
 }
-
-console.log(forOf)
 
 /*
 2. Методы массивов

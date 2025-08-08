@@ -47,19 +47,19 @@ for (let i = 0; i < myPizzasT1.length; i++) {
 
 for (let i = 0; i < myPizzasT2.length; i++) {
   if (!competitorPizzasLower.includes(myPizzasT2Lower[i])) {
-    resultUniqueT2.push(myPizzasT2[i]);
+    resultUniqueT2.push(myPizzasT2[i])
   }
 }
 
-resultUnique = [...resultUniqueT1, ...resultUniqueT2];
+resultUnique = [...resultUniqueT1, ...resultUniqueT2]
 
 if (resultUnique.length === 0) {
   resultNull = null;
 } else {
-  resultUnique = [...new Set(resultUnique)];
+  resultUnique = [...new Set(resultUnique)]
 }
 
-console.log(resultUnique); 
-console.log(resultNull);  
+console.log(resultUnique)
+console.log(resultNull)
 
 export { resultNull, resultUnique };
