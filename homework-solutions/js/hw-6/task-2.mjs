@@ -51,15 +51,19 @@ for (let i = 0; i < myPizzasT2.length; i++) {
   }
 }
 
-resultUnique = [...resultUniqueT1, ...resultUniqueT2]
-
-if (resultUnique.length === 0) {
-  resultNull = null;
+if (resultUniqueT1.length === 0 && resultUniqueT2.length === 0) {
+  resultUnique = resultNull;  
 } else {
-  resultUnique = [...new Set(resultUnique)]
+  resultUnique = [...resultUniqueT1, ...resultUniqueT2];
+  let uniqueSet = [];
+  for (let pizza of resultUnique) {
+    if (!uniqueSet.includes(pizza)) {
+      uniqueSet.push(pizza);
+    }
+  }
+  resultUnique = uniqueSet;
 }
 
-console.log(resultUnique)
-console.log(resultNull)
+console.log(resultUnique);
 
 export { resultNull, resultUnique };
