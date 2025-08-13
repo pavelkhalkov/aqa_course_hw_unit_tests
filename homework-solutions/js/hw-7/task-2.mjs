@@ -4,8 +4,15 @@
 */
 
 function isPalindrom(word) {
-  // Ваш код
-}
+  if (typeof word !== 'string') {
+    return false;
+  }
+
+  const cleanedStr = word.toLowerCase().replace(/\s+/g, '')
+  return cleanedStr === cleanedStr.split('').reverse().join('')
+ }
+
+ console.log(isPalindrom('RACECAR'))
 
 /*
  2. findLongestWords()
@@ -15,7 +22,15 @@ function isPalindrom(word) {
 */
 
 function findLongestWords(sentence) {
-  // Ваш код
+   if (typeof sentence !== 'string' || sentence.trim() === '') {
+    return [];
+  }
+    const words = sentence.split(' ')
+    const maxLength = Math.max(...words.map(el => el.length))
+    return words.filter(el => el.length === maxLength )
+
 }
+
+console.log(findLongestWords("I am learning JavaScript")); 
 
 export { isPalindrom, findLongestWords };
