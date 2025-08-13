@@ -12,15 +12,24 @@
   7. some - проверьте, есть ли в массиве элементы больше 90 //true
   8. every - проверьте, что все элементы массива двухзначные //false
 */
+
 const numbers = [7, 8, 2, 30, 85, 95, 77, 94, 37, 31];
 
-let forEach;
-let map;
-let filter;
-let find;
-let sort;
-let reduce;
-let some;
-let every;
+let forEach = [];
+
+numbers.forEach(element => {
+    if (element % 3 === 0) {
+        forEach.push(element);
+    } 
+})
+
+let map = numbers.map((element, indexe, array) => element - array.length);
+let filter = numbers.filter((el, index, arr) => index > 0 && el > arr[index -1]);
+let find = numbers.find((el, i) => el === i);
+let sort = [...numbers].sort((a, b) => a - b);
+let reduce = numbers.reduce((acc, el) => acc + el, 0);
+let some = numbers.some(el => el > 90);
+let every = numbers.every(el => el >= 10 && el <= 99);
+
 
 export { forEach, map, filter, find, sort, reduce, some, every };
