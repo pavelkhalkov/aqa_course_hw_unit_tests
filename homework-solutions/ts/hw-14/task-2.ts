@@ -1,7 +1,7 @@
-type mapCallback<T> = (element: T, index: number, array: T[]) => T;
+type mapCallback<T, U> = (element: T, index: number, array: T[]) => U;
 
-function map<T>(array: T[], callback: mapCallback<T>): T[] {
-  const result: T[] = [];
+function map<T, U>(array: T[], callback: mapCallback<T, U>): U[] {
+  const result: U[] = [];
 
   for (let i = 0; i < array.length; i++) {
     result.push(callback(array[i], i, array));
@@ -9,9 +9,5 @@ function map<T>(array: T[], callback: mapCallback<T>): T[] {
   return result;
 }
 
-const callback = (element: number, index: number, array: number[]): number => {
-  return element * index;
-};
-
-const result = map([1, 2, 3, 4, 5], callback);
+const result = map([1, 2, 3, 4, 5], (element: number, index: number): number => element * index);
 console.log(result);
