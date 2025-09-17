@@ -9,5 +9,5 @@ function map<T, U>(array: T[], callback: mapCallback<T, U>): U[] {
   return result;
 }
 
-const result = map([1, 2, 3, 4, 5], (element: number, index: number): number => element * index);
+const result = map([1, 2, 3, 4, 5], (element, index) => element * index);
 console.log(result);
